@@ -12,5 +12,5 @@ cp ~/.dotfiles/scripts/ytconfig ~/.config/youtube-dl/config
 mkdir ~/bin
 cd ~/bin
 touch termux-url-opener
-echo "youtube-dl $1" >> termux-url-opener
+echo "youtube-dl \$1" >> termux-url-opener
 cd ~
