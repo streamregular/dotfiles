@@ -203,4 +203,5 @@ alias around="echo \"I turn around\" && sleep 0.4 && echo \"Turn
 around\" && sleep 0.4 && echo \"Swirl swish\" && sleep 2 && reboot"
 alias time="echo \"Di da da di da da go\" && sleep 1.8 && echo \"Di da da di da da go\" && sleep 1.8 && echo \"Time after time after time time time time\" && sleep 5.5 && echo \"Put your punk your hands up\" && sleep 1 && sudo shutdown -P"
 alias terraria="sh ~/Scripts/terraria.sh"
+alias zshupd8="rm -rf ~/.dotfiles && git clone https://github.com/streamregular/dotfiles ~/.dotfiles && cp ~/.dotfiles/.zshrc ~/.zshrc"
 todo
