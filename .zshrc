@@ -154,9 +154,9 @@ export LESS=-r
 
 ## Plugins section: Enable fish style features
 # Use syntax highlighting
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Use history substring search
-source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 # bind UP and DOWN arrow keys to history substring search
 zmodload zsh/terminfo
 bindkey "$terminfo[kcuu1]" history-substring-search-up
@@ -203,4 +203,6 @@ alias around="echo \"I turn around\" && sleep 0.4 && echo \"Turn
 around\" && sleep 0.4 && echo \"Swirl swish\" && sleep 2 && reboot"
 alias time="echo \"Di da da di da da go\" && sleep 1.8 && echo \"Di da da di da da go\" && sleep 1.8 && echo \"Time after time after time time time time\" && sleep 5.5 && echo \"Put your punk your hands up\" && sleep 1 && sudo shutdown -P"
 alias terraria="sh ~/Scripts/terraria.sh"
-alias zshupd8="rm -rf ~/.dotfiles && git clone https://github.com/streamregular/dotfiles ~/.dotfiles && cp ~/.dotfiles/.zshrc ~/.zshrc && exit"
+alias zshupd8="rm -rf ~/.dotfiles && git clone https://github.com/streamregular/dotfiles ~/.dotfiles && cp ~/.dotfiles/.zshrc ~/.zshrc"
+
+fpath=(~/.zsh/zsh-completions/src $fpath)
