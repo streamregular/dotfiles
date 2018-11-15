@@ -1,0 +1,44 @@
+! ██╗░░██╗██████╗░███████╗███████╗░██████╗░██╗░░░██╗██████╗░░██████╗███████╗███████╗
+! ╚██╗██╔╝██╔══██╗██╔════╝██╔════╝██╔═══██╗██║░░░██║██╔══██╗██╔════╝██╔════╝██╔════╝
+! ░╚███╔╝░██████╔╝█████╗░░███████╗██║░░░██║██║░░░██║██████╔╝██║░░░░░█████╗░░███████╗
+! ░██╔██╗░██╔══██╗██╔══╝░░╚════██║██║░░░██║██║░░░██║██╔══██╗██║░░░░░██╔══╝░░╚════██║
+! ██╔╝░██╗██║░░██║███████╗███████║╚██████╔╝╚██████╔╝██║░░██║╚██████╗███████╗███████║
+! ╚═╝░░╚═╝╚═╝░░╚═╝╚══════╝╚══════╝░╚═════╝░░╚═════╝░╚═╝░░╚═╝░╚═════╝╚══════╝╚══════╝
+!
+! -----------------------------------
+Xft.dpi: 96
+Xft.antialias: true
+Xft.hinting: true
+Xft.rgba: rgb
+Xft.autohint: false
+Xft.hintstyle: hintfull
+Xft.lcdfilter: lcddefault
+
+! X configs that I'll never use
+
+xcursor.theme:            Vanilla-DMZ
+xscreensaver.fade:   false
+xscreensaver.unfade: false
+
+! Colors
+
+*background:	#2F343F
+*foreground:	#F3E5F5
+*cursorColor:	#F3E5F5
+*color0:	#2F343F
+*color1:	#635787
+*color2:	#7A74B8
+*color3:	#FFBFFF
+*color4:	#FFAAD4
+*color5:	#CEB7FF
+*color6:	#C49DFF
+*color7:	#C9D3FF
+*color8:	#B4C3FF
+*color9:	#D5C7FF
+*color10:	#D6B5FF
+*color11:	#E6CBEA
+*color12:	#E3BCEA
+*color13:	#D8DDFF
+*color14:	#D5D8FF
+*color15:	#F3E5F5
+*color16:	#F6E6FF
