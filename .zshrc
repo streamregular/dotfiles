@@ -154,9 +154,9 @@ export LESS=-r
 
 ## Plugins section: Enable fish style features
 # Use syntax highlighting
-source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Use history substring search
-source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
+source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 # bind UP and DOWN arrow keys to history substring search
 zmodload zsh/terminfo
 bindkey "$terminfo[kcuu1]" history-substring-search-up
@@ -191,7 +191,7 @@ case $(basename "$(cat "/proc/$PPID/comm")") in
   *)
         RPROMPT='$(git_prompt_string)'
 		# Use autosuggestion
-		source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+		source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 		ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
   		ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
     ;;
@@ -203,6 +203,4 @@ alias around="echo \"I turn around\" && sleep 0.4 && echo \"Turn
 around\" && sleep 0.4 && echo \"Swirl swish\" && sleep 2 && reboot"
 alias time="echo \"Di da da di da da go\" && sleep 1.8 && echo \"Di da da di da da go\" && sleep 1.8 && echo \"Time after time after time time time time\" && sleep 5.5 && echo \"Put your punk your hands up\" && sleep 1 && sudo shutdown -P"
 alias terraria="sh ~/Scripts/terraria.sh"
-alias zshupd8="rm -rf ~/.dotfiles && git clone https://github.com/streamregular/dotfiles ~/.dotfiles && cp ~/.dotfiles/.zshrc ~/.zshrc"
-
-fpath=(~/.zsh/zsh-completions/src $fpath)
+todo
