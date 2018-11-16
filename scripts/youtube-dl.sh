@@ -14,3 +14,4 @@ cd ~/bin
 touch termux-url-opener
 echo "youtube-dl \$1" >> termux-url-opener
 cd ~
+echo "Check your \~\/bin\/termux-url-opener file in order to verify if \"youtube-dl \$1\" was correctly inserted.
