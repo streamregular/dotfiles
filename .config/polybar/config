@@ -32,7 +32,7 @@ width = 100%
 height = 27
 ;offset-x = 1%
 ;offset-y = 1%
-radius = 6.0
+radius = 2.5
 fixed-center = true
 
 background = ${colors.background}
@@ -58,7 +58,7 @@ font-4 = "Font Awesome 5 Free:style=Solid:pixelsize=10;1"
 font-5 = "Font Awesome 5 Brands:pixelsize=10;1"
 font-6 = "Noto Sans CJK KR:style=Regular:pixelsize=10;1"
 
-modules-left = ewhm
+modules-left = separator ewmh
 modules-center = spotify 
 modules-right = pulseaudio xkeyboard memory cpu date powermenu
 
@@ -441,77 +441,32 @@ format-underline = ${xrdb:color5:#222}
 [module/ewmh]
 type = internal/xworkspaces
 
-; Only show workspaces defined on the same output as the bar
-;
-; Useful if you want to show monitor specific workspaces
-; on different bars
-;
-; Default: false
+icon-0 = 1; 
+icon-1 = 2; 
+icon-2 = 3; 
+icon-3 = 4; 
+icon-4 = 5; 
+icon-5 = 6; 
+icon-6 = 7; 
+icon-7 = 8; 
+
 pin-workspaces = true
-
-; Create click handler used to focus desktop
-; Default: true
-enable-click = true
-
-; Create scroll handlers used to cycle desktops
-; Default: true
+enable-click = false
 enable-scroll = false
-
-; icon-[0-9]+ = <desktop-name>;<icon>
-; NOTE: The desktop name needs to match the name configured by the WM
-; You can get a list of the defined desktops using:
-; $ xprop -root _NET_DESKTOP_NAMES
-icon-0 = 1;1
-icon-1 = 2;2
-icon-2 = 3;3
-icon-3 = 4;4
-icon-4 = 5;5
-icon-default = 1
-
-; Available tags:
-;   <label-monitor>
-;   <label-state> - gets replaced with 
-<label-(active|urgent|occupied|empty)>
-; Default: <label-state>
+label-active = "  ⬤  "
+label-occupied = "  ⚫  "
+label-urgent = "  ⚫  "
+label-empty = "  ⚫  "
+;alternative to format = label-state
 format = <label-state>
-
-; Available tokens:
-;   %name%
-; Default: %name%
 label-monitor = %name%
+label-active-underline = ${xrdb:color4:#222}
+label-occupied-underline = ${xrdb:color5:#222}
+label-urgent-underline = ${xrdb:color5:#222}
 
-; Available tokens:
-;   %name%
-;   %icon%
-;   %index%
-; Default: %icon%  %name%
-label-active = %icon% %name%
-label-active-foreground = #ffffff
-label-active-background = #3f3f3f
-label-active-underline = #fba922
 
-; Available tokens:
-;   %name%
-;   %icon%
-;   %index%
-; Default: %icon%  %name%
-label-occupied = %icon%
-label-occupied-underline = #555555
-
-; Available tokens:
-;   %name%
-;   %icon%
-;   %index%
-; Default: %icon%  %name%
-label-urgent = %icon%
-label-urgent-foreground = #000000
-label-urgent-background = #bd2c40
-label-urgent-underline = #9b0a20
-
-; Available tokens:
-;   %name%
-;   %icon%
-;   %index%
-; Default: %icon%  %name%
-label-empty = %icon%
-label-empty-foreground = #55
+[module/separator]
+type = custom/script
+interval = 864000
+format = <label>
+exec = echo " "
