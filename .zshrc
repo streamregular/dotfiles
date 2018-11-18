@@ -98,8 +98,11 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias zshrc="nano ~/.zshrc"
-alias zshr="clear && source .zshrc"
-alias rosefetch="neofetch --source ~/asciiflower"
+alias zshr="clear && source ~/.zshrc"
+alias rosefetch="neofetch --source ~/.asciiflower"
+alias polyconf="nano ~/.config/polybar/config"
+alias polyreset="sh ~/Scripts/polybar-reset.sh"
+alias wal2res="cp ~/.cache/wal/colors.Xresources ~/.Xresources"
 
 # startup programs
 
@@ -112,7 +115,8 @@ export PATH=$PATH:/home/$USER/.gem/ruby/2.5.0/bin
 
 # wal alias zone
 
-alias oSoleMio="wal -i ~/Wallpapers/osolemio.png"
-alias laVieEnRose="wal -i ~/Wallpapers/steven-erixon-735351-unsplashedited.png"
-alias Uncover="wal -i ~/Wallpapers/yuki-yoshida-104560-unsplashcherryblue.png"
-alias midnightRoad="wal -i ~/Wallpapers/robert-wiedemann-1099337-unsplashvignerepurple.png"
+alias oSoleMio="wal -i ~/Wallpapers/osolemio.png && wal2res"
+alias laVieEnRose="wal -i ~/Wallpapers/steven-erixon-735351-unsplashedited.png && wal2res"
+alias Uncover="wal -i ~/Wallpapers/yuki-yoshida-104560-unsplashcherryblue.png && wal2res"
+alias midnightRoad="wal -i ~/Wallpapers/robert-wiedemann-1099337-unsplashvignerepurple.png && wal2res"
+alias egoDormio="wal -i ~/Wallpapers/os038d.png && wal2res"
