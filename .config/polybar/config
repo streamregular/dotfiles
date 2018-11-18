@@ -1,5 +1,3 @@
-; yes, this is a tweaked version of the original example config file
-;
 ;==========================================================
 ;
 ;
@@ -19,15 +17,13 @@
 ;==========================================================
 
 [colors]
-;background = ${xrdb:color0:#070B0D}
-background = #BF070B0D
+background = ${xrdb:color0:#222}
 background-alt = #444
-;foreground = ${xrdb:color7:#070B0D}
-foreground = #dfdfdf
-foreground-alt = #555
-primary = #ffb52a
-secondary = #b30e2a
-alert = #bd2c40
+foreground = ${xrdb:color7:#222}
+foreground-alt = ${xrdb:color7:#222}
+primary = ${xrdb:color1:#222}
+secondary = ${xrdb:color2:#222}
+alert = ${xrdb:color3:#222}
 
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
@@ -59,6 +55,7 @@ font-2 = "Wuncon Siji:pixelsize=10;1"
 font-3 = "Font Awesome 5 Free:style=Regular:pixelsize=10;1"
 font-4 = "Font Awesome 5 Free:style=Solid:pixelsize=10;1"
 font-5 = "Font Awesome 5 Brands:pixelsize=10;1"
+font-6 = "Noto Sans CJK KR:style=Regular:pixelsize=10;1"
 
 modules-left = ewhm
 modules-center = spotify 
@@ -212,7 +209,7 @@ type = internal/cpu
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #c9253b
+format-underline = ${xrdb:color5:#222}
 label = %percentage:2%%
 
 [module/memory]
@@ -220,7 +217,7 @@ type = internal/memory
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #c9102f
+format-underline = ${xrdb:color3:#222}
 label = %percentage_used%%
 
 [module/wlan]
@@ -273,7 +270,7 @@ time-alt = %H:%M:%S
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #c93546
+format-underline = ${xrdb:color4:#222}
 
 label = %date% %time%
 
@@ -438,7 +435,7 @@ interval = 1
 format-prefix = "♪ "
 format = <label>
 exec = spotify-now -i "%artist - %title" -e "Nature - The Sound of Silence"
-format-underline = #ae3647
+format-underline = ${xrdb:color5:#222}
 
 [module/ewmh]
 type = internal/xworkspaces
