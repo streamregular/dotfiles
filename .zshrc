@@ -104,6 +104,7 @@ alias polyconf="nano ~/.config/polybar/config"
 alias polyreset="sh ~/Scripts/polybar-reset.sh"
 alias wal2res="cp ~/.cache/wal/colors.Xresources ~/.Xresources"
 alias blur="sh ~/Scripts/blur.sh"
+alias rosefetch="neofetch --source ~/.asciiflower"
 
 # startup programs
 
@@ -120,4 +121,4 @@ alias oSoleMio="wal -i ~/Wallpapers/osolemio.png && wal2res"
 alias laVieEnRose="wal -i ~/Wallpapers/steven-erixon-735351-unsplashedited.png && wal2res"
 alias Uncover="wal -i ~/Wallpapers/yuki-yoshida-104560-unsplashcherryblue.png && wal2res"
 alias midnightRoad="wal -i ~/Wallpapers/robert-wiedemann-1099337-unsplashvignerepurple.png && wal2res"
-alias egoDormio="wal -i ~/Wallpapers/48b.png && wal2res"
+alias egoDormio="sh ~/Scripts/egoDormio.sh"
