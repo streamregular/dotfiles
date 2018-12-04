@@ -17,4 +17,4 @@ fi
 echo -n "Name for the MV: "
 read answer
 echo ' '
-youtube-dl -f -o ./%(title)s.%(ext)s.vdd 136+140 $1 && mv *.vdd $answer.mp4
+youtube-dl -f 136+140 -o ./newmv.vdd $1 && mv *.vdd $answer.mp4
