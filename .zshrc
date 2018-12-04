@@ -105,6 +105,7 @@ alias polyreset="sh ~/Scripts/polybar-reset.sh"
 alias wal2res="cp ~/.cache/wal/colors.Xresources ~/.Xresources"
 alias blur="sh ~/Scripts/blur.sh"
 alias rosefetch="neofetch --source ~/.asciiflower"
+alias kmv="sh ~/Scripts/kmv.sh"
 
 # startup programs
 
