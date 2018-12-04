@@ -106,6 +106,7 @@ alias wal2res="cp ~/.cache/wal/colors.Xresources ~/.Xresources"
 alias blur="sh ~/Scripts/blur.sh"
 alias rosefetch="neofetch --source ~/.asciiflower"
 alias kmv="sh ~/Scripts/kmv.sh"
+alias kdl="sh ~/Scripts/kdl.sh"
 
 # startup programs
 
