@@ -107,6 +107,11 @@ alias blur="sh ~/Scripts/blur.sh"
 alias rosefetch="neofetch --source ~/.asciiflower"
 alias kmv="sh ~/Scripts/kmv.sh"
 alias kdl="sh ~/Scripts/kdl.sh"
+alias kmv-list="ls ~/Archives/Videos/MVs"
+alias i3conf="nano ~/.config/i3/config"
+alias comptonconf="nano ~/.config/compton.conf"
+alias brkeyboard="sudo setxkbmap -model abnt2 -layout br -variant abnt2"
+alias gtkrconf="nano ~/.gtkrc-2.0 && nano ~/.config/gtk-3.0/settings.ini"
 
 # startup programs
 
@@ -124,3 +129,7 @@ alias laVieEnRose="wal -i ~/Wallpapers/steven-erixon-735351-unsplashedited.png &
 alias Uncover="wal -i ~/Wallpapers/yuki-yoshida-104560-unsplashcherryblue.png && wal2res"
 alias midnightRoad="wal -i ~/Wallpapers/robert-wiedemann-1099337-unsplashvignerepurple.png && wal2res"
 alias egoDormio="sh ~/Scripts/egoDormio.sh"
+alias silentFlow="sh ~/Scripts/silentFlow.sh"
+alias loveCherryMotion="sh ~/Scripts/loveCherryMotion.sh"
+alias fanfare="sh ~/Scripts/fanfare.sh"
+alias starryNight="sh ~/Scripts/starryNight.sh"

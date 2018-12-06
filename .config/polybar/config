@@ -26,37 +26,27 @@ primary = ${xrdb:color1:#222}
 secondary = ${xrdb:color1:#222}
 alert = ${xrdb:color3:#222}
 
-[bar/floating]
-width = 20%
-height = 35
-offset-x = 70%
-offset-y = 50%
-radius = 6
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-modules-left = 
-modules-center = 
-modules-right = xkeyboard memory cpu time
-
 [bar/top]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 27
+;height = 27 on original setup
+height = 35
 ;offset-x = 1%
 ;offset-y = 1%
-radius = 2.5
 fixed-center = true
 
-background = ${colors.background}
+;background = ${colors.background}
+background = #cc121212
 foreground = ${colors.foreground}
 
 line-size = 3
 line-color = #f00
 
-border-size = 4
-border-color = #00000000
+; for empty space on borders: uncomment border tags and set radius to 2.5
+;
+radius = 0
+;border-size = 4
+;border-color = #00000000
 
 padding-left = 0
 padding-right = 2
@@ -64,21 +54,23 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
+;all fonts are 10;1 on original setup
 font-0 = fixed:pixelsize=10;1
+;font-0 = "Cantarell:style=Regular:pixelsize=11;1"
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = "Wuncon Siji:pixelsize=10;1"
-font-3 = "Font Awesome 5 Free:style=Regular:pixelsize=10;1"
-font-4 = "Font Awesome 5 Free:style=Solid:pixelsize=10;1"
-font-5 = "Font Awesome 5 Brands:pixelsize=10;1"
-font-6 = "Noto Sans CJK KR:style=Regular:pixelsize=10;1"
+font-2 = "Wuncon Siji:pixelsize=11;1"
+font-3 = "Font Awesome 5 Free:style=Regular:pixelsize=11;1"
+font-4 = "Font Awesome 5 Free:style=Solid:pixelsize=11;1"
+font-5 = "Font Awesome 5 Brands:pixelsize=11;1"
+font-6 = "Noto Sans CJK KR:style=Regular:pixelsize=11;1"
 
-modules-left = separator ewmh
-modules-center = spotify 
-modules-right = pulseaudio xkeyboard memory cpu date powermenu
+modules-left = separator powermenu pulseaudio 
+modules-center = sp spotify-now sn
+modules-right = xkeyboard memory cpu date
 
-tray-position = right
+;tray-position = right
 tray-padding = 2
-;tray-background = #0063ff
+tray-background = #01121212
 
 ;wm-restack = bspwm
 ;wm-restack = i3
@@ -103,11 +95,13 @@ type = internal/xkeyboard
 blacklist-0 = num lock
 
 format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-prefix-underline = ${colors.secondary}
+;format-prefix-foreground = ${colors.foreground-alt}
+;format-prefix-foreground = #ff7d7bed
+format-prefix-foreground = ${xrdb:color8}
+;format-prefix-underline = ${colors.secondary}
 
 label-layout = %layout%
-label-layout-underline = ${colors.secondary}
+;label-layout-underline = ${colors.secondary}
 
 label-indicator-padding = 2
 label-indicator-margin = 1
@@ -223,16 +217,20 @@ card = intel_backlight
 type = internal/cpu
 interval = 2
 format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${xrdb:color6:#222}
+;format-prefix-foreground = ${colors.foreground-alt}
+;format-prefix-foreground = #ffed7b97
+format-prefix-foreground = ${xrdb:color6}
+;format-underline = ${xrdb:color6:#222}
 label = %percentage:2%%
 
 [module/memory]
 type = internal/memory
 interval = 2
 format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${xrdb:color5:#222}
+;format-prefix-foreground = ${colors.foreground-alt}
+;format-prefix-foreground = #ffa87bed
+format-prefix-foreground = ${xrdb:color7}
+;format-underline = ${xrdb:color5:#222}
 label = %percentage_used%%
 
 [module/wlan]
@@ -284,15 +282,18 @@ time = %H:%M
 time-alt = %H:%M:%S
 
 format-prefix = 
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${xrdb:color4:#222}
+;format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-foreground = ${xrdb:color5}
+;format-prefix-foreground = #ffed7b7b
+;format-underline = ${xrdb:color4:#222}
 
 label = %date% %time%
 
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume = <ramp-volume> <label-volume>
+;<label-volume>
+format-volume = <ramp-volume> <bar-volume>
 format-underline = #0a6cf5
 label-volume = %percentage%%
 label-volume-foreground = ${root.foreground}
@@ -300,18 +301,19 @@ label-volume-foreground = ${root.foreground}
 ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
+;ramp-volume-foreground = #ffffdddd
 
-label-muted =  muted
-label-muted-foreground = #666
+label-muted = 
+;label-muted-foreground = ${colors.foreground-alt}
 
 bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
+bar-volume-foreground-0 = ${xrdb:color4:#222}
+bar-volume-foreground-1 = ${xrdb:color4:#222}
+bar-volume-foreground-2 = ${xrdb:color4:#222}
+bar-volume-foreground-3 = ${xrdb:color4:#222}
+bar-volume-foreground-4 = ${xrdb:color4:#222}
+bar-volume-foreground-5 = ${xrdb:color4:#222}
+bar-volume-foreground-6 = ${xrdb:color4:#222}
 bar-volume-gradient = false
 bar-volume-indicator = |
 bar-volume-indicator-font = 2
@@ -405,13 +407,14 @@ ramp-foreground = ${colors.foreground-alt}
 type = custom/menu
 
 expand-right = true
-
 format-spacing = 1
 
 label-open = 
-label-open-foreground = ${colors.secondary}
+;label-open-foreground = ${colors.foreground-alt}
+label-open-foreground = #ffed7b7b
 label-close =  cancel
-label-close-foreground = ${colors.secondary}
+;label-close-foreground = ${colors.secondary}
+label-close-foreground = #ffed7b7b
 label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
 
@@ -419,6 +422,8 @@ menu-0-0 = reboot
 menu-0-0-exec = menu-open-1
 menu-0-1 = power off
 menu-0-1-exec = menu-open-2
+menu-0-2 = exit
+menu-0-2-exec = menu-open-3
 
 menu-1-0 = cancel
 menu-1-0-exec = menu-open-0
@@ -429,6 +434,11 @@ menu-2-0 = power off
 menu-2-0-exec = sudo poweroff
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
+
+menu-3-0 = exit
+menu-3-0-exec = i3-msg exit
+menu-3-1 = cancel
+menu-3-1-exec = menu-open-0
 
 [settings]
 screenchange-reload = true
@@ -444,13 +454,17 @@ margin-bottom = 5
 
 ; vim:ft=dosini
 
-[module/spotify]
+[module/spotify-now]
 type = custom/script
 interval = 1
 format-prefix = "♪ "
+;format-prefix-foreground = #ff7bed9d
 format = <label>
-exec = spotify-now -i "%artist - %title" -e "Nature - The Sound of Silence"
-format-underline = ${xrdb:color5:#222}
+exec = spotify-now -i "%artist - %title" -e "VIXX - Silence"
+;format-underline = #ff7bed9d
+format-underline = ${xrdb:color4:#222}
+;optional [stolen from the spotify script]
+click-left = spotifycli --playpause
 
 [module/ewmh]
 type = internal/xworkspaces
@@ -484,3 +498,47 @@ type = custom/script
 interval = 864000
 format = <label>
 exec = echo " "
+
+; additional spotify module that I S T O L E
+
+[module/sn]
+type = custom/text
+content = "  "
+tail = true
+format = <label>
+content-background = #cc121212
+;content-background = ${xrdb:color0:#222}
+click-left = spotifycli --next 
+
+[module/sp]
+type = custom/text
+content = "  "
+;content-background = ${xrdb:color0:#222}
+content-background = #cc121212
+click-left = spotifycli --prev
+
+[module/spp]
+type = custom/script
+interval = 0
+exec = sh /home/george/Scripts/spotify-playpause.sh
+format = <label>
+format-background = ${xrdb:color0:#222}
+click-left = spotify-cli --playpause
+
+[module/sps]
+type = custom/text
+content = "  "
+format = <label>
+content-background = ${colors.one}
+
+[module/spotify]
+type = custom/script
+interval = 2
+format = <label>
+format-prefix = "  "
+click-left = xdotool key super+0
+format-prefix-foreground = ${colors.zero}
+format-prefix-background = ${colors.four}
+format-background = ${colors.four}
+exec = ~/.config/polybar/scripts/spot
+tail = true

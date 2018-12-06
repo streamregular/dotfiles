@@ -17,4 +17,4 @@ fi
 echo -n "Name for the MV: "
 read answer
 echo ' '
-youtube-dl -f 136+140 -o /home/$USER/Archives/Videos/MVs/newmv.vdd $1 && mv *.vdd.mp4 "$answer.mp4"
+youtube-dl -f 136+140 -o /home/$USER/Archives/Videos/MVs/newmv.vdd $1 && cd /home/$USER/Archives/Videos/MVs/ && mv ./*.vdd.mp4 "./$answer.mp4"
