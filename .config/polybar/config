@@ -64,8 +64,10 @@ font-4 = "Font Awesome 5 Free:style=Solid:pixelsize=11;1"
 font-5 = "Font Awesome 5 Brands:pixelsize=11;1"
 font-6 = "Noto Sans CJK KR:style=Regular:pixelsize=11;1"
 
+;sp spotify-now sn @ center pra spotify
+;cp cmus cn @ center pra cmus
 modules-left = separator powermenu pulseaudio 
-modules-center = sp spotify-now sn
+modules-center = cp cmus cn
 modules-right = xkeyboard memory cpu date
 
 ;tray-position = right
@@ -460,7 +462,7 @@ interval = 1
 format-prefix = "♪ "
 ;format-prefix-foreground = #ff7bed9d
 format = <label>
-exec = spotify-now -i "%artist - %title" -e "VIXX - Silence"
+exec = spotify-now -i "%artist - %title" -e "Mamamoo - Starry Night"
 ;format-underline = #ff7bed9d
 format-underline = ${xrdb:color4:#222}
 ;optional [stolen from the spotify script]
@@ -542,3 +544,31 @@ format-prefix-background = ${colors.four}
 format-background = ${colors.four}
 exec = ~/.config/polybar/scripts/spot
 tail = true
+
+[module/cmus]
+type = custom/script
+interval = 1
+format-prefix = "♪ "
+;format-prefix-foreground = #ff7bed9d
+format = <label>
+exec = sh ~/Scripts/cmus-song-echo.sh
+;format-underline = #ff7bed9d
+format-underline = ${xrdb:color4:#222}
+click-left = cmus-remote -u
+
+[module/cn]
+type = custom/text
+content = "  "
+tail = true
+format = <label>
+content-background = #cc121212
+;content-background = ${xrdb:color0:#222}
+click-left = cmus-remote -n && sh ~/Scripts/cmus-notify.sh
+
+[module/cp]
+type = custom/text
+content = "  "
+;content-background = ${xrdb:color0:#222}
+content-background = #cc121212
+click-left = cmus-remote -r && sh ~/Scripts/cmus-notify.sh
+

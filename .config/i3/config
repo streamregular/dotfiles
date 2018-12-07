@@ -172,7 +172,7 @@ bindsym $mod+r mode "resize"
 default_border pixel 1
 default_floating_border pixel 1
 
-gaps inner 15
+gaps inner 25
 exec --no-startup-id xrandr --output VGA1 --mode 1360x768
 exec_always --no-startup-id sh /home/george/Scripts/polybar-reset.sh
 exec --no-startup-id compton
@@ -192,3 +192,7 @@ client.placeholder           #d8b8c1 #d8b8c1 #ffffff #d8b8c1   #d8b8c1
 
 # custom binding section
 bindsym Print exec scrot -q 100
+bindsym $mod+m exec sh ~/Scripts/cmus-notify.sh
+bindsym XF86AudioPlay exec cmus-remote -u && sh ~/Scripts/cmus-notify.sh
+bindsym XF86AudioPrev exec cmus-remote -r && sh ~/Scripts/cmus-notify.sh
+bindsym XF86AudioNext exec cmus-remote -n && sh ~/Scripts/cmus-notify.sh

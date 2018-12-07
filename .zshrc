@@ -112,11 +112,14 @@ alias i3conf="nano ~/.config/i3/config"
 alias comptonconf="nano ~/.config/compton.conf"
 alias brkeyboard="sudo setxkbmap -model abnt2 -layout br -variant abnt2"
 alias gtkrconf="nano ~/.gtkrc-2.0 && nano ~/.config/gtk-3.0/settings.ini"
+alias dunstconf="nano ~/.config/dunst/dunstrc"
 
 # startup programs
 
 echo ' '
 wal -R -q -e
+todo
+echo ' '
 
 # ruby settings
 
