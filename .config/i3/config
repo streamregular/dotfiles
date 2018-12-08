@@ -191,7 +191,7 @@ client.urgent           #d8b8c1 #d8b8c1 #ffffff #d8b8c1   #d8b8c1
 client.placeholder           #d8b8c1 #d8b8c1 #ffffff #d8b8c1   #d8b8c1
 
 # custom binding section
-bindsym Print exec scrot -q 100
+bindsym Print exec scrot
 bindsym $mod+m exec sh ~/Scripts/cmus-notify.sh
 bindsym XF86AudioPlay exec cmus-remote -u && sh ~/Scripts/cmus-notify.sh
 bindsym XF86AudioPrev exec cmus-remote -r && sh ~/Scripts/cmus-notify.sh

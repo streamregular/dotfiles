@@ -113,6 +113,11 @@ alias comptonconf="nano ~/.config/compton.conf"
 alias brkeyboard="sudo setxkbmap -model abnt2 -layout br -variant abnt2"
 alias gtkrconf="nano ~/.gtkrc-2.0 && nano ~/.config/gtk-3.0/settings.ini"
 alias dunstconf="nano ~/.config/dunst/dunstrc"
+alias art-gen="sh ~/Scripts/album-art-generator-auto.sh"
+alias art-gen-man="sh ~/Scripts/album-art-generator-manual.sh"
+alias art-gen-m4a="sh ~/Scripts/album-art-generator-auto-m4a.sh"
+alias art-gen-m4a-man="sh ~/Scripts/album-art-generator-manual-m4a.sh"
+alias missing-art="sh ~/Scripts/missing-cover.sh"
 
 # startup programs
 
