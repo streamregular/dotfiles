@@ -1,4 +1,5 @@
 ; yes, this is a tweaked version of the original example config file
+;
 ;==========================================================
 ;
 ;
@@ -17,7 +18,10 @@
 ;
 ;==========================================================
 
+; ========== color section ==========
+
 [colors]
+
 background = ${xrdb:color0:#222}
 background-alt = #444
 foreground = ${xrdb:color7:#222}
@@ -26,16 +30,19 @@ primary = ${xrdb:color1:#222}
 secondary = ${xrdb:color1:#222}
 alert = ${xrdb:color3:#222}
 
+; ========== end of color section ==========
+
+; ========== bar section ==========
+
 [bar/top]
-;monitor = ${env:MONITOR:HDMI-1}
+
 width = 100%
-;height = 27 on original setup
 height = 35
-;offset-x = 1%
-;offset-y = 1%
 fixed-center = true
 
-;background = ${colors.background}
+; uncomment the next line for .Xresources based background
+; background = ${colors.background}
+
 background = #cc121212
 foreground = ${colors.foreground}
 
@@ -43,10 +50,11 @@ line-size = 3
 line-color = #f00
 
 ; for empty space on borders: uncomment border tags and set radius to 2.5
-;
+
+; border-size = 4
+; border-color = #00000000
+
 radius = 0
-;border-size = 4
-;border-color = #00000000
 
 padding-left = 0
 padding-right = 2
@@ -54,9 +62,13 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-;all fonts are 10;1 on original setup
+; ========== end of bar section ==========
+
+; ========== font section ==========
+
+; all fonts are 10;1 on original setup
+
 font-0 = fixed:pixelsize=10;1
-;font-0 = "Cantarell:style=Regular:pixelsize=11;1"
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = "Wuncon Siji:pixelsize=11;1"
 font-3 = "Font Awesome 5 Free:style=Regular:pixelsize=11;1"
@@ -64,33 +76,27 @@ font-4 = "Font Awesome 5 Free:style=Solid:pixelsize=11;1"
 font-5 = "Font Awesome 5 Brands:pixelsize=11;1"
 font-6 = "Noto Sans CJK KR:style=Regular:pixelsize=11;1"
 
-;sp spotify-now sn @ center pra spotify
-;cp cmus cn @ center pra cmus
+; ========== end of font section ==========
+
+; ========== layout section ==========
+
+; spotify version: modules-center = spotify-previous spotify-now spotify-next
+; cmus version: modules-center = cmus-previous cmus-now cmus-next
+
 modules-left = separator powermenu pulseaudio 
-modules-center = cp cmus cn
+modules-center = cmus-previous cmus-now cmus-next
 modules-right = xkeyboard memory cpu date
 
-;tray-position = right
-tray-padding = 2
-tray-background = #01121212
+; ========== end of layout section ==========
 
-;wm-restack = bspwm
-;wm-restack = i3
-
-;override-redirect = true
-
-;scroll-up = bspwm-desknext
-;scroll-down = bspwm-deskprev
-
-;scroll-up = i3wm-wsnext
-;scroll-down = i3wm-wsprev
+; ========== cursor section ==========
 
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-[module/xwindow]
-type = internal/xwindow
-label = %title:0:30:...%
+; ========== end of cursor section ==========
+
+; ========== module section ==========
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -109,111 +115,6 @@ label-indicator-padding = 2
 label-indicator-margin = 1
 label-indicator-background = ${colors.secondary}
 label-indicator-underline = ${colors.secondary}
-
-[module/filesystem]
-type = internal/fs
-interval = 25
-
-mount-0 = /
-
-label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
-label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = ${colors.foreground-alt}
-
-[module/bspwm]
-type = internal/bspwm
-
-label-focused = %index%
-label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
-label-focused-padding = 2
-
-label-occupied = %index%
-label-occupied-padding = 2
-
-label-urgent = %index%!
-label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
-
-label-empty = %index%
-label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 2
-
-; Separator in between workspaces
-; label-separator = |
-
-[module/i3]
-type = internal/i3
-format = <label-state> <label-mode>
-index-sort = true
-wrapping-scroll = false
-
-; Only show workspaces on the same output as the bar
-;pin-workspaces = true
-
-label-mode-padding = 2
-label-mode-foreground = #000
-label-mode-background = ${colors.primary}
-
-; focused = Active workspace on focused monitor
-label-focused = %index%
-label-focused-background = ${module/bspwm.label-focused-background}
-label-focused-underline = ${module/bspwm.label-focused-underline}
-label-focused-padding = ${module/bspwm.label-focused-padding}
-
-; unfocused = Inactive workspace on any monitor
-label-unfocused = %index%
-label-unfocused-padding = ${module/bspwm.label-occupied-padding}
-
-; visible = Active workspace on unfocused monitor
-label-visible = %index%
-label-visible-background = ${self.label-focused-background}
-label-visible-underline = ${self.label-focused-underline}
-label-visible-padding = ${self.label-focused-padding}
-
-; urgent = Workspace with urgency hint set
-label-urgent = %index%
-label-urgent-background = ${module/bspwm.label-urgent-background}
-label-urgent-padding = ${module/bspwm.label-urgent-padding}
-
-; Separator in between workspaces
-; label-separator = |
-
-
-[module/mpd]
-type = internal/mpd
-format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
-
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
-
-label-song-maxlen = 25
-label-song-ellipsis = true
-
-[module/xbacklight]
-type = internal/xbacklight
-
-format = <label> <bar>
-label = BL
-
-bar-width = 10
-bar-indicator = |
-bar-indicator-foreground = #fff
-bar-indicator-font = 2
-bar-fill = ─
-bar-fill-font = 2
-bar-fill-foreground = #9f78e1
-bar-empty = ─
-bar-empty-font = 2
-bar-empty-foreground = ${colors.foreground-alt}
-
-[module/backlight-acpi]
-inherit = module/xbacklight
-type = internal/backlight
-card = intel_backlight
 
 [module/cpu]
 type = internal/cpu
@@ -234,44 +135,6 @@ format-prefix = " "
 format-prefix-foreground = ${xrdb:color7}
 ;format-underline = ${xrdb:color5:#222}
 label = %percentage_used%%
-
-[module/wlan]
-type = internal/network
-interface = net1
-interval = 3.0
-
-format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #9f78e1
-label-connected = %essid%
-
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
-
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
-
-[module/eth]
-type = internal/network
-interface = enp1s0
-interval = 3.0
-
-format-connected-underline = #55aa55
-format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = %local_ip%
-
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
 
 [module/date]
 type = internal/date
@@ -325,86 +188,6 @@ bar-volume-empty = ─
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
-[module/alsa]
-type = internal/alsa
-
-format-volume = <label-volume> <bar-volume>
-label-volume = VOL
-label-volume-foreground = ${root.foreground}
-
-format-muted-prefix = "🔇 "
-format-muted-foreground = ${colors.foreground-alt}
-label-muted = sound muted
-
-bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = false
-bar-volume-indicator = |
-bar-volume-indicator-font = 2
-bar-volume-fill = ─
-bar-volume-fill-font = 2
-bar-volume-empty = ─
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
-
-[module/battery]
-type = internal/battery
-battery = BAT0
-adapter = ADP1
-full-at = 98
-
-format-charging = <animation-charging> <label-charging>
-format-charging-underline = #ffb52a
-
-format-discharging = <animation-discharging> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
-
-format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-underline = ${self.format-charging-underline}
-
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-foreground = ${colors.foreground-alt}
-
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-foreground = ${colors.foreground-alt}
-animation-charging-framerate = 750
-
-animation-discharging-0 = 
-animation-discharging-1 = 
-animation-discharging-2 = 
-animation-discharging-foreground = ${colors.foreground-alt}
-animation-discharging-framerate = 750
-
-[module/temperature]
-type = internal/temperature
-thermal-zone = 0
-warn-temperature = 60
-
-format = <ramp> <label>
-format-underline = #f50a4d
-format-warn = <ramp> <label-warn>
-format-warn-underline = ${self.format-underline}
-
-label = %temperature-c%
-label-warn = %temperature-c%
-label-warn-foreground = ${colors.secondary}
-
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-foreground = ${colors.foreground-alt}
-
 [module/powermenu]
 type = custom/menu
 
@@ -442,6 +225,32 @@ menu-3-0-exec = i3-msg exit
 menu-3-1 = cancel
 menu-3-1-exec = menu-open-0
 
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+[module/ewmh]
+type = internal/xworkspaces
+
+pin-workspaces = true
+enable-click = false
+enable-scroll = false
+
+label-active = "  ⬤  "
+label-occupied = "  ⚫  "
+label-urgent = "  ⚫  "
+label-empty = "  ⚫  "
+
+format = <label-state>
+label-monitor = %name%
+label-active-underline = ${xrdb:color4:#222}
+label-occupied-underline = ${xrdb:color4:#222}
+label-urgent-underline = ${xrdb:color4:#222}
+
+; ========== end of module section ==========
+
+; ========== settings section ==========
+
 [settings]
 screenchange-reload = true
 ;compositing-background = xor
@@ -450,60 +259,11 @@ screenchange-reload = true
 ;compositing-border = over
 ;pseudo-transparency = false
 
-[global/wm]
-margin-top = 5
-margin-bottom = 5
+; ========== end of settings section ==========
 
-; vim:ft=dosini
+; ========== spotify section ==========
 
-[module/spotify-now]
-type = custom/script
-interval = 1
-format-prefix = "♪ "
-;format-prefix-foreground = #ff7bed9d
-format = <label>
-exec = spotify-now -i "%artist - %title" -e "Mamamoo - Starry Night"
-;format-underline = #ff7bed9d
-format-underline = ${xrdb:color4:#222}
-;optional [stolen from the spotify script]
-click-left = spotifycli --playpause
-
-[module/ewmh]
-type = internal/xworkspaces
-
-icon-0 = 1; 
-icon-1 = 2; 
-icon-2 = 3; 
-icon-3 = 4; 
-icon-4 = 5; 
-icon-5 = 6; 
-icon-6 = 7; 
-icon-7 = 8; 
-
-pin-workspaces = true
-enable-click = false
-enable-scroll = false
-label-active = "  ⬤  "
-label-occupied = "  ⚫  "
-label-urgent = "  ⚫  "
-label-empty = "  ⚫  "
-;alternative to format = label-state
-format = <label-state>
-label-monitor = %name%
-label-active-underline = ${xrdb:color4:#222}
-label-occupied-underline = ${xrdb:color4:#222}
-label-urgent-underline = ${xrdb:color4:#222}
-
-
-[module/separator]
-type = custom/script
-interval = 864000
-format = <label>
-exec = echo " "
-
-; additional spotify module that I S T O L E
-
-[module/sn]
+[module/spotify-next]
 type = custom/text
 content = "  "
 tail = true
@@ -512,40 +272,27 @@ content-background = #cc121212
 ;content-background = ${xrdb:color0:#222}
 click-left = spotifycli --next 
 
-[module/sp]
+[module/spotify-now]
+type = custom/script
+interval = 1
+format-prefix = "♪ "
+format = <label>
+exec = spotify-now -i "%artist - %title" -e "VIXX - Silence"
+format-underline = ${xrdb:color4:#222}
+click-left = spotifycli --playpause
+
+[module/spotify-previous]
 type = custom/text
 content = "  "
 ;content-background = ${xrdb:color0:#222}
 content-background = #cc121212
 click-left = spotifycli --prev
 
-[module/spp]
-type = custom/script
-interval = 0
-exec = sh /home/george/Scripts/spotify-playpause.sh
-format = <label>
-format-background = ${xrdb:color0:#222}
-click-left = spotify-cli --playpause
+; ========== end of spotify section ==========
 
-[module/sps]
-type = custom/text
-content = "  "
-format = <label>
-content-background = ${colors.one}
+; ========== cmus section ==========
 
-[module/spotify]
-type = custom/script
-interval = 2
-format = <label>
-format-prefix = "  "
-click-left = xdotool key super+0
-format-prefix-foreground = ${colors.zero}
-format-prefix-background = ${colors.four}
-format-background = ${colors.four}
-exec = ~/.config/polybar/scripts/spot
-tail = true
-
-[module/cmus]
+[module/cmus-now]
 type = custom/script
 interval = 1
 format-prefix = "♪ "
@@ -556,19 +303,30 @@ exec = sh ~/Scripts/cmus-song-echo.sh
 format-underline = ${xrdb:color4:#222}
 click-left = cmus-remote -u
 
-[module/cn]
+[module/cmus-next]
 type = custom/text
 content = "  "
 tail = true
 format = <label>
 content-background = #cc121212
 ;content-background = ${xrdb:color0:#222}
-click-left = cmus-remote -n && sh ~/Scripts/cmus-notify.sh
+click-left = cmus-remote -n && sh ~/Scripts/cmus-notify-polybar.sh
 
-[module/cp]
+[module/cmus-previous]
 type = custom/text
 content = "  "
 ;content-background = ${xrdb:color0:#222}
 content-background = #cc121212
-click-left = cmus-remote -r && sh ~/Scripts/cmus-notify.sh
+click-left = cmus-remote -r && sh ~/Scripts/cmus-notify-polybar.sh
 
+; ========== end of cmus section ==========
+
+; ========== custom section ==========
+
+[module/separator]
+type = custom/script
+interval = 864000
+format = <label>
+exec = echo " "
+
+; ========== end of custom section ==========
