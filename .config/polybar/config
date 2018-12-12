@@ -196,34 +196,17 @@ format-spacing = 1
 
 label-open = 
 ;label-open-foreground = ${colors.foreground-alt}
-label-open-foreground = #ffed7b7b
-label-close =  cancel
+;label-open-foreground = #ffed7b7b
+label-open-foreground = ${xrdb:color5}
+label-close =  
 ;label-close-foreground = ${colors.secondary}
-label-close-foreground = #ffed7b7b
+;label-close-foreground = #ffed7b7b
+label-close-foreground = ${xrdb:color5}
 label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
 
-menu-0-0 = reboot
-menu-0-0-exec = menu-open-1
-menu-0-1 = power off
-menu-0-1-exec = menu-open-2
-menu-0-2 = exit
-menu-0-2-exec = menu-open-3
-
-menu-1-0 = cancel
-menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
-menu-1-1-exec = sudo reboot
-
-menu-2-0 = power off
-menu-2-0-exec = sudo poweroff
-menu-2-1 = cancel
-menu-2-1-exec = menu-open-0
-
-menu-3-0 = exit
-menu-3-0-exec = i3-msg exit
-menu-3-1 = cancel
-menu-3-1-exec = menu-open-0
+menu-0-0 = exit
+menu-0-0-exec = i3-msg exit
 
 [global/wm]
 margin-top = 5
@@ -300,7 +283,7 @@ format-prefix = "♪ "
 format = <label>
 exec = sh ~/Scripts/cmus-song-echo.sh
 ;format-underline = #ff7bed9d
-format-underline = ${xrdb:color4:#222}
+format-underline = ${xrdb:color5:#222}
 click-left = cmus-remote -u
 
 [module/cmus-next]
