@@ -118,11 +118,13 @@ alias art-gen-man="sh ~/Scripts/album-art-generator-manual.sh"
 alias art-gen-m4a="sh ~/Scripts/album-art-generator-auto-m4a.sh"
 alias art-gen-m4a-man="sh ~/Scripts/album-art-generator-manual-m4a.sh"
 alias missing-art="sh ~/Scripts/missing-cover.sh"
+alias tethering="sudo sh ~/Scripts/tethering.sh"
 
 # startup programs
 
 echo ' '
-wal -R -q -e
+wal -i ~/Wallpapers/greensc.jpg -n -e -q
+wal -i ~/Wallpapers/unsplash.jpg -s -e -q
 todo
 echo ' '
 
@@ -133,9 +135,6 @@ export PATH=$PATH:/home/$USER/.gem/ruby/2.5.0/bin
 # wal alias zone
 
 alias oSoleMio="wal -i ~/Wallpapers/osolemio.png && wal2res"
-alias laVieEnRose="wal -i ~/Wallpapers/steven-erixon-735351-unsplashedited.png && wal2res"
-alias Uncover="wal -i ~/Wallpapers/yuki-yoshida-104560-unsplashcherryblue.png && wal2res"
-alias midnightRoad="wal -i ~/Wallpapers/robert-wiedemann-1099337-unsplashvignerepurple.png && wal2res"
 alias egoDormio="sh ~/Scripts/egoDormio.sh"
 alias silentFlow="sh ~/Scripts/silentFlow.sh"
 alias loveCherryMotion="sh ~/Scripts/loveCherryMotion.sh"
