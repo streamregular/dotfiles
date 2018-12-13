@@ -1,0 +1,65 @@
+[global]
+    font = FantasqueSansMono Nerd Font Bold 12
+    markup = full
+    format = "%s\n%b"
+    sort = yes
+    indicate_hidden = yes
+    alignment = center
+    bounce_freq = 0
+    show_age_threshold = 10
+    word_wrap = yes
+    ignore_newline = no
+    geometry = "0x0-25+60"
+    title = dunst
+    class = dunst
+    shrink = yes
+    transparency = 0
+    idle_threshold = 120
+    monitor = 0
+    follow = mouse
+    stack_duplicates = true
+    hide_duplicate_count = false
+    sticky_history = yes
+    history_length = 50
+    show_indicators = yes
+    line_height = 1
+    notification_height = 0
+    separator_height = 2
+    padding = 20
+    horizontal_padding = 30
+    separator_color = auto
+    browser = /usr/local/bin/firefox
+    icon_position = left
+    icon_path = /usr/share/icons/Arc/status/:/usr/share/icons/Arc/devices/
+    frame_width = 2
+    frame_color = "#e9223a"
+    corner_radius = 0
+
+
+[shortcuts]
+    close = ctrl+space
+    history = ctrl+h
+
+[urgency_low]
+    background = "#ff6578"
+    foreground = "#000000"
+    timeout = 10
+
+[urgency_normal]
+    background = "#ff6578"
+    foreground = "#000000"
+    timeout = 10
+
+[urgency_critical]
+    background = "#ff6578"
+    foreground = "#000000"
+    frame_color = "#e9223a"
+    timeout = 60 
+
+[play_sound]
+    summary = "*"
+    script = "notif"
+
+[i3-gaps]
+    appname = i3-gaps
+    padding = 10
