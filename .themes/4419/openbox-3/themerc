@@ -18,20 +18,21 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 ### WINDOW
-border.width: 1
+border.width: 0
 
 window.client.padding.width: 0
 window.client.padding.height: 0
 window.handle.width: 0
 
 padding.width: 4
-padding.height: 4
+padding.height: 7
 
-window.active.border.color: #2d3036
+window.active.border.color: #61827c
 window.inactive.border.color: #2d3036
-window.active.title.separator.color: #2c2f37
+window.active.title.separator.color: #61827c
 window.inactive.title.separator.color: #2c2f37
-window.active.client.color: #2d3036
+# window.active.client.color: #2d3036
+window.active.client.color: #61827c
 window.inactive.client.color: #2d3036
 
 window.active.label.text.color: #d3dae3
@@ -53,7 +54,7 @@ window.inactive.button.toggled.pressed.image.color: #6a938b
 window.inactive.button.toggled.hover.image.color: #d3dae3
 
 window.active.title.bg: flat solid
-window.active.title.bg.color: #2c2f37
+window.active.title.bg.color: #61827c
 window.active.label.bg: flat solid
 window.active.label.bg.color: #2c2f37
 #window.active.handle.bg: texture
@@ -86,7 +87,7 @@ window.label.text.justify: center
 #window.inactive.label.text.font: text shadow
 
 ### MENU
-menu.border.width: 0
+menu.border.width: 6
 menu.separator.width: 1
 menu.separator.padding.width: 10
 menu.separator.padding.height: 2
@@ -94,11 +95,11 @@ menu.separator.padding.height: 2
 menu.overlap.x: 0
 menu.overlap.y: 0
 
-menu.border.color: #aeb0b6
+menu.border.color: #2c2f37
 menu.separator.color: #a8adb5
 
 menu.title.text.color: #d3dae3
-menu.items.text.color: #2d3036
+menu.items.text.color: #d1d8e1
 menu.items.disabled.text.color: #76797F
 menu.items.active.text.color: #2c2f37
 menu.items.active.disabled.text.color: #aeb0b6

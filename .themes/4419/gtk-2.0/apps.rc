@@ -1,4 +1,6 @@
 # Thunar Styles
+# 6a938b for i3
+# 61827c for openbox
 
 style "sidepane" {
 	base[NORMAL] = @bg_color
@@ -11,13 +13,13 @@ style "thunar-handle" { GtkPaned::handle-size = 2 }
 
 
 style "dark-sidebar" {
- GtkTreeView::odd_row_color = "#6a938b"
+ GtkTreeView::odd_row_color = "#61827c"
 
-GtkTreeView::even_row_color = "#6a938b"
+GtkTreeView::even_row_color = "#61827c"
 
-base[NORMAL] = "#6a938b"
+base[NORMAL] = "#61827c"
 
-base[INSENSITIVE] = "#6a938b"
+base[INSENSITIVE] = "#61827c"
 
 text[NORMAL] = "#EEFFFF"
 
