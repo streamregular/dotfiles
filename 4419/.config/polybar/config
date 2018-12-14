@@ -72,11 +72,12 @@ module-margin-right = 2
 font-0 = fixed:pixelsize=10;1
 ;font-0 = "t cherry:style=Bold:pixelsize=12;1"
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = "Wuncon Siji:pixelsize=11;1"
-font-3 = "Font Awesome 5 Free:style=Regular:pixelsize=11;1"
-font-4 = "Font Awesome 5 Free:style=Solid:pixelsize=11;1"
-font-5 = "Font Awesome 5 Brands:pixelsize=11;1"
-font-6 = "Noto Sans CJK KR:style=Regular:pixelsize=11;1"
+font-2 = "Material\-Design\-Iconic\-Font:style=Design-Iconic-Font:pixelsize=11;1"
+font-3 = "Wuncon Siji:pixelsize=11;1"
+font-4 = "Font Awesome 5 Free:style=Regular:pixelsize=11;1"
+font-5 = "Font Awesome 5 Free:style=Solid:pixelsize=11;1"
+font-6 = "Font Awesome 5 Brands:pixelsize=11;1"
+font-7 = "Noto Sans CJK KR:style=Regular:pixelsize=11;1"
 
 ; ========== end of font section ==========
 
@@ -89,7 +90,7 @@ font-6 = "Noto Sans CJK KR:style=Regular:pixelsize=11;1"
 
 modules-left = separator powermenu pulseaudio 
 modules-center = cmus-previous cmus-now cmus-next
-modules-right = xkeyboard memory cpu date separator
+modules-right = pacman-updates xkeyboard memory cpu date separator
 
 ; ========== end of layout section ==========
 
@@ -329,5 +330,13 @@ type = custom/text
 content = " » "
 content-background = #00121212
 click-left = dmenu_run -fn 'Cantarell:pixelsize=15' -sb '#6a938b' -y 35 -nb '#121212' -o 0.8 -sf '#000000'
+
+[module/pacman-updates]
+type = custom/script
+exec = pacman -Qu | wc -l
+interval = 600
+format-background = #00121212
+format-prefix = "  "
+format-prefix-foreground = ${xrdb:color7}
 
 ; ========== end of custom section ==========
