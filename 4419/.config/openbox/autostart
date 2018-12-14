@@ -1,0 +1,5 @@
+setxkbmap -layout br,kr -option 'grp:alt_shift_toggle' &
+xrandr --output VGA1 --mode 1360x768 &
+feh --bg-fill /home/george/Wallpapers/unsplash2.jpg &
+polybar top &
+compton &

@@ -43,7 +43,7 @@ fixed-center = true
 ; uncomment the next line for .Xresources based background
 ; background = ${colors.background}
 
-background = #cc121212
+background = #00121212
 foreground = ${colors.foreground}
 
 line-size = 3
@@ -68,7 +68,9 @@ module-margin-right = 2
 
 ; all fonts are 10;1 on original setup
 
+;font-0 = "Cantarell:style=Regular:pixelsize=10;1"
 font-0 = fixed:pixelsize=10;1
+;font-0 = "t cherry:style=Bold:pixelsize=12;1"
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = "Wuncon Siji:pixelsize=11;1"
 font-3 = "Font Awesome 5 Free:style=Regular:pixelsize=11;1"
@@ -82,10 +84,12 @@ font-6 = "Noto Sans CJK KR:style=Regular:pixelsize=11;1"
 
 ; spotify version: modules-center = spotify-previous spotify-now spotify-next
 ; cmus version: modules-center = cmus-previous cmus-now cmus-next
+; powermenu for i3, dmenu for openbox
+; remove separator module when using cherry font
 
 modules-left = separator powermenu pulseaudio 
 modules-center = cmus-previous cmus-now cmus-next
-modules-right = xkeyboard memory cpu date
+modules-right = xkeyboard memory cpu date separator
 
 ; ========== end of layout section ==========
 
@@ -251,7 +255,7 @@ type = custom/text
 content = "  "
 tail = true
 format = <label>
-content-background = #cc121212
+content-background = #00121212
 ;content-background = ${xrdb:color0:#222}
 click-left = spotifycli --next 
 
@@ -268,7 +272,7 @@ click-left = spotifycli --playpause
 type = custom/text
 content = "  "
 ;content-background = ${xrdb:color0:#222}
-content-background = #cc121212
+content-background = #00121212
 click-left = spotifycli --prev
 
 ; ========== end of spotify section ==========
@@ -283,23 +287,31 @@ format-prefix = "♪ "
 format = <label>
 exec = sh ~/Scripts/cmus-song-echo.sh
 ;format-underline = #ff7bed9d
-format-underline = ${xrdb:color5:#222}
+;format-underline = ${xrdb:color5:#222}
 click-left = cmus-remote -u
+exec-if = pgrep -x "cmus"
 
 [module/cmus-next]
-type = custom/text
-content = "  "
-tail = true
+type = custom/script
+interval = 1
 format = <label>
-content-background = #cc121212
+exec = echo "  "
+exec-if = pgrep -x "cmus"
+;content = "  "
+;tail = true
+;format = <label>
+;content-background = #00121212
 ;content-background = ${xrdb:color0:#222}
 click-left = cmus-remote -n && sh ~/Scripts/cmus-notify-polybar.sh
 
 [module/cmus-previous]
-type = custom/text
-content = "  "
+type = custom/script
+interval = 1
+format = <label>
+exec = echo "  "
+exec-if = pgrep -x "cmus"
 ;content-background = ${xrdb:color0:#222}
-content-background = #cc121212
+content-background = #00121212
 click-left = cmus-remote -r && sh ~/Scripts/cmus-notify-polybar.sh
 
 ; ========== end of cmus section ==========
@@ -311,5 +323,11 @@ type = custom/script
 interval = 864000
 format = <label>
 exec = echo " "
+
+[module/dmenu]
+type = custom/text
+content = " » "
+content-background = #00121212
+click-left = dmenu_run -fn 'Cantarell:pixelsize=15' -sb '#6a938b' -y 35 -nb '#121212' -o 0.8 -sf '#000000'
 
 ; ========== end of custom section ==========
