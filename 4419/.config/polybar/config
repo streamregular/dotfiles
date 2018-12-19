@@ -211,7 +211,8 @@ label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
 
 menu-0-0 = exit
-menu-0-0-exec = i3-msg exit
+menu-0-0-exec = openbox --exit
+; i3-msg exit for i3, openbox --exit for openbox
 
 [global/wm]
 margin-top = 5
@@ -338,5 +339,6 @@ interval = 600
 format-background = #00121212
 format-prefix = "  "
 format-prefix-foreground = ${xrdb:color7}
+click-left = sudo pacman -Syup
 
 ; ========== end of custom section ==========

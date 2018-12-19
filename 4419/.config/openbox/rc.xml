@@ -154,7 +154,7 @@
      Many programs reserve space automatically, but you can use this in other
      cases. -->
   <margins>
-    <top>0</top>
+    <top>60</top>
     <bottom>25</bottom>
     <left>25</left>
     <right>25</right>
@@ -324,6 +324,15 @@
           <name>Polybar</name>
         </startupnotify>
         <command>sh /home/george/Scripts/polybar-reset.sh</command>
+      </action>
+    </keybind>
+    <keybind key="W-t">
+      <action name="Execute">
+        <startupnotify>
+          <enabled>false</enabled>
+          <name>Terminal</name>
+        </startupnotify>
+        <command>gnome-terminal --hide-menubar</command>
       </action>
     </keybind>
     <keybind key="W-S-r">

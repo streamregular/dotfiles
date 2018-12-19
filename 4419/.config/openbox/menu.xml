@@ -7,7 +7,29 @@
 			</action>
 		</item>
 	</menu>
+	<menu id="apps-games-menu" label="Games">
+		<item label="osu!">
+			<action name="Execute">
+				<execute>/opt/osu/osulauncher</execute>
+			</action>
+		</item>
+		<item label="Terraria (Modded)">
+			<action name="Execute">
+				<execute>sh /home/george/Scripts/TerrariaModded.sh</execute>
+			</action>
+		</item>
+		<item label="Terraria (Vanilla)">
+			<action name="Execute">
+				<execute>sh /home/george/Scripts/Terraria.sh</execute>
+			</action>
+		</item>
+	</menu>
 	<menu id="apps-editors-menu" label="Editors">
+		<item label="Nvim">
+			<action name="Execute">
+				<execute>mate-terminal --window --hide-menubar --profile=Fantasque -e nvim</execute>
+			</action>
+		</item>
 		<item label="Pluma">
 			<action name="Execute">
 				<execute>pluma</execute>
@@ -15,6 +37,16 @@
 		</item>
 	</menu>
 	<menu id="apps-term-menu" label="Terminals">
+		<item label="Gnome Terminal">
+			<action name="Execute">
+				<execute>gnome-terminal --hide-menubar</execute>
+			</action>
+		</item>
+		<item label="URxvt">
+			<action name="Execute">
+				<execute>urxvt</execute>
+			</action>
+		</item>
 		<item label="Mate Terminal">
 			<action name="Execute">
 				<execute>mate-terminal --hide-menubar</execute>
@@ -22,6 +54,11 @@
 		</item>
 	</menu>
 	<menu id="apps-net-menu" label="Internet">
+		<item label="Discord">
+			<action name="Execute">
+				<execute>discord</execute>
+			</action>
+		</item>
 		<item label="Firefox">
 			<action name="Execute">
 				<command>firefox</command>
@@ -33,43 +70,18 @@
 		</item>
 	</menu>
 	<menu id="apps-office-menu" label="Office">
-		<item label="OpenOffice Base">
+		<item label="LibreOffice">
 			<action name="Execute">
-				<command>ooffice -base</command>
-			</action>
-		</item>
-		<item label="OpenOffice Calc">
-			<action name="Execute">
-				<command>ooffice -calc</command>
-			</action>
-		</item>
-		<item label="OpenOffice Draw">
-			<action name="Execute">
-				<command>ooffice -draw</command>
-			</action>
-		</item>
-		<item label="OpenOffice Impress">
-			<action name="Execute">
-				<command>ooffice -impress</command>
-			</action>
-		</item>
-		<item label="OpenOffice Math">
-			<action name="Execute">
-				<command>ooffice -math</command>
-			</action>
-		</item>
-		<item label="OpenOffice Printer Administration">
-			<action name="Execute">
-				<command>ooffice-printeradmin</command>
-			</action>
-		</item>
-		<item label="OpenOffice Writer">
-			<action name="Execute">
-				<command>ooffice -writer</command>
+				<execute>libreoffice</execute>
 			</action>
 		</item>
 	</menu>
 	<menu id="apps-multimedia-menu" label="Multimedia">
+		<item label="Cmus">
+			<action name="Execute">
+				<execute>gnome-terminal --window --hide-menubar --profile=Fantasque -- cmus</execute>
+			</action>
+		</item>
 		<item label="MPlayer">
 			<action name="Execute">
 				<command>gmplayer</command>
@@ -127,6 +139,16 @@
 		</item>
 	</menu>
 	<menu id="system-menu" label="System">
+		<item label="Openbox Appearance Manager">
+			<action name="Execute">
+				<execute>lxappearance</execute>
+			</action>
+		</item>
+		<item label="Openbox Menu Editor">
+			<action name="Execute">
+				<execute>obmenu</execute>
+			</action>
+		</item>
 		<item label="Openbox Configuration Manager">
 			<action name="Execute">
 				<command>obconf</command>
@@ -144,6 +166,7 @@
 		<separator label="Applications"/>
 		<menu id="apps-accessories-menu"/>
 		<menu id="apps-editors-menu"/>
+		<menu id="apps-games-menu"/>
 		<menu id="apps-graphics-menu"/>
 		<menu id="apps-net-menu"/>
 		<menu id="apps-office-menu"/>
