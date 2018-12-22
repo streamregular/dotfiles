@@ -1,6 +1,9 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+export TERM="xterm-256color"
+export QT_QPA_PLATFORMTHEME="qt5ct"
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -99,7 +102,6 @@ source $ZSH/oh-my-zsh.sh
 
 alias zshrc="nano ~/.zshrc"
 alias zshr="clear && source ~/.zshrc"
-alias rosefetch="neofetch --source ~/.asciiflower"
 alias polyconf="nano ~/.config/polybar/config"
 alias polyreset="sh ~/Scripts/polybar-reset.sh"
 alias wal2res="cp ~/.cache/wal/colors.Xresources ~/.Xresources"
@@ -109,34 +111,14 @@ alias kmv="sh ~/Scripts/kmv.sh"
 alias kdl="sh ~/Scripts/kdl.sh"
 alias kmv-list="ls ~/Archives/Videos/MVs"
 alias i3conf="nano ~/.config/i3/config"
-alias comptonconf="nano ~/.config/compton.conf"
-alias brkeyboard="sudo setxkbmap -model abnt2 -layout br -variant abnt2"
-alias gtkrconf="nano ~/.gtkrc-2.0 && nano ~/.config/gtk-3.0/settings.ini"
 alias dunstconf="nano ~/.config/dunst/dunstrc"
-alias art-gen="sh ~/Scripts/album-art-generator-auto.sh"
-alias art-gen-man="sh ~/Scripts/album-art-generator-manual.sh"
-alias art-gen-m4a="sh ~/Scripts/album-art-generator-auto-m4a.sh"
-alias art-gen-m4a-man="sh ~/Scripts/album-art-generator-manual-m4a.sh"
-alias missing-art="sh ~/Scripts/missing-cover.sh"
 alias tethering="sudo sh ~/Scripts/tethering.sh"
+alias cmus="gnome-terminal --window --hide-menubar --profile=Fantasque -- cmus >/dev/null 2>&1"
+alias please="sudo"
+alias quit="exit"
 
 # startup programs
 
 echo ' '
-wal -i ~/Wallpapers/greensc.jpg -n -e -q
-wal -i ~/Wallpapers/unsplash.jpg -s -e -q
 todo
 echo ' '
-
-# ruby settings
-
-export PATH=$PATH:/home/$USER/.gem/ruby/2.5.0/bin
-
-# wal alias zone
-
-alias oSoleMio="wal -i ~/Wallpapers/osolemio.png && wal2res"
-alias egoDormio="sh ~/Scripts/egoDormio.sh"
-alias silentFlow="sh ~/Scripts/silentFlow.sh"
-alias loveCherryMotion="sh ~/Scripts/loveCherryMotion.sh"
-alias fanfare="sh ~/Scripts/fanfare.sh"
-alias starryNight="sh ~/Scripts/starryNight.sh"

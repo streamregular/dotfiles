@@ -43,6 +43,7 @@ fixed-center = true
 ; uncomment the next line for .Xresources based background
 ; background = ${colors.background}
 
+;background = #FF61827C
 background = #00121212
 foreground = ${colors.foreground}
 
@@ -199,7 +200,8 @@ type = custom/menu
 expand-right = true
 format-spacing = 1
 
-label-open = 
+label-open = ☰
+;label-open = 
 ;label-open-foreground = ${colors.foreground-alt}
 ;label-open-foreground = #ffed7b7b
 label-open-foreground = ${xrdb:color5}
@@ -210,9 +212,11 @@ label-close-foreground = ${xrdb:color5}
 label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
 
-menu-0-0 = exit
-menu-0-0-exec = openbox --exit
-; i3-msg exit for i3, openbox --exit for openbox
+menu-0-0 = run
+menu-0-0-exec = dmenu_run -fn 'Cantarell:pixelsize=15' -sb '#6a938b' -y 35 -nb '#121212' -o 0.8 -sf '#000000'
+menu-0-1 = exit
+menu-0-1-exec = sudo systemctl restart display-manager
+; i3-msg exit for i3, openbox --exit for openbox, sudo systemctl restart display-manager for all
 
 [global/wm]
 margin-top = 5

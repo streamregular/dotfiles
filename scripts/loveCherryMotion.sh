@@ -1,7 +1,5 @@
 #!/bin/sh
 
-wal -i ~/Wallpapers/lcm49b.png $1 $2 &&
-cp ~/.cache/wal/colors.Xresources ~/.Xresources
+wal -i ~/Wallpapers/lcm49b.png $1 $2 $3 &&
 
-# alias egoDormio="wal -i ~/Wallpapers/48b.png && wal2res"
-# -b 121212
+cp ~/.cache/wal/colors.Xresources ~/.Xresources

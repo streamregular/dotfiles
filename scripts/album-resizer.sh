@@ -1,2 +1,2 @@
 #!/bin/sh
-for d in /home/$USER/Archives/Music/*/*/ ; do (cd "$d" && convert folder.png -resize 80x80 folder80.png); done
+for d in /home/$USER/Archives/Music/*/*/ ; do (cd "$d" && convert folder.png -resize $1x$1 folder$1.png); done
