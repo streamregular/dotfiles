@@ -377,7 +377,7 @@
           <enabled>false</enabled>
           <name>Dmenu</name>
         </startupnotify>
-        <command>dmenu_run -fn 'Cantarell:pixelsize=15' -sb '#6a938b' -y 35 -nb '#121212' -o 0.0 -sf '#000000'</command>
+        <command>dmenu_run -fn 'Cantarell:pixelsize=15' -sb '#6a938b' -y 747 -nb '#121212' -o 0.8 -sf '#000000'</command>
       </action>
     </keybind>
     <keybind key="W-e">

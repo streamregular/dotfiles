@@ -70,8 +70,8 @@ module-margin-right = 2
 ; all fonts are 10;1 on original setup
 
 ;font-0 = "Cantarell:style=Regular:pixelsize=10;1"
+;font-1 = "forkawesome:style=Regular:pixelsize=11;1"
 font-0 = fixed:pixelsize=10;1
-;font-0 = "t cherry:style=Bold:pixelsize=12;1"
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = "Material\-Design\-Iconic\-Font:style=Design-Iconic-Font:pixelsize=11;1"
 font-3 = "Wuncon Siji:pixelsize=11;1"
@@ -90,7 +90,7 @@ font-7 = "Noto Sans CJK KR:style=Regular:pixelsize=11;1"
 ; remove separator module when using cherry font
 
 modules-left = separator powermenu pulseaudio 
-modules-center = cmus-previous cmus-now cmus-next
+modules-center = cmus-previous cmus-now cmus-next bspwm
 modules-right = pacman-updates xkeyboard memory cpu date separator
 
 ; ========== end of layout section ==========
@@ -213,10 +213,10 @@ label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
 
 menu-0-0 = run
-menu-0-0-exec = dmenu_run -fn 'Cantarell:pixelsize=15' -sb '#6a938b' -y 35 -nb '#121212' -o 0.8 -sf '#000000'
+menu-0-0-exec = dmenu_run -fn 'Cantarell:pixelsize=15' -sb '#6a938b' -y 747 -nb '#121212' -o 0.8 -sf '#000000'
 menu-0-1 = exit
-menu-0-1-exec = sudo systemctl restart display-manager
-; i3-msg exit for i3, openbox --exit for openbox, sudo systemctl restart display-manager for all
+menu-0-1-exec = bspc quit
+; i3-msg exit for i3, openbox --exit for openbox, sudo systemctl restart display-manager for all, bspc quit for bspwm
 
 [global/wm]
 margin-top = 5
@@ -226,10 +226,11 @@ margin-bottom = 5
 type = internal/xworkspaces
 
 pin-workspaces = true
-enable-click = false
+enable-click = true
 enable-scroll = false
 
-label-active = "  ⬤  "
+;label-active = "  ⬤  "
+label-active = "  "
 label-occupied = "  ⚫  "
 label-urgent = "  ⚫  "
 label-empty = "  ⚫  "
@@ -339,10 +340,41 @@ click-left = dmenu_run -fn 'Cantarell:pixelsize=15' -sb '#6a938b' -y 35 -nb '#12
 [module/pacman-updates]
 type = custom/script
 exec = pacman -Qu | wc -l
-interval = 600
+interval = 864000
 format-background = #00121212
 format-prefix = "  "
 format-prefix-foreground = ${xrdb:color7}
-click-left = sudo pacman -Syup
+click-left = pacman -Qu | wc -l
 
 ; ========== end of custom section ==========
+
+[module/bspwm]
+type = internal/bspwm
+
+; Only show workspaces defined on the same output as the bar
+; NOTE: The bspwm and XRandR monitor names must match, which they do by default.
+; Default: true
+pin-workspaces = true
+
+; Output mode flags after focused state label
+; Default: false
+inline-mode = false
+
+; Create click handler used to focus workspace
+; Default: true
+enable-click = true
+
+; Create scroll handlers used to cycle workspaces
+; Default: true
+enable-scroll = false
+
+; Set the scroll cycle direction 
+; Default: true
+reverse-scroll = false
+
+; Use fuzzy (partial) matching on labels when assigning 
+; icons to workspaces
+; Example: code;♚ will apply the icon to all workspaces 
+; containing 'code' in the label
+; Default: false
+fuzzy-match = true
